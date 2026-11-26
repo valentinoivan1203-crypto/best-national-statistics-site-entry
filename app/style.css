@@ -1,0 +1,135 @@
+/* DataNusa — clean data-journalism style. System fonts only, no webfonts, no network. */
+:root {
+  --paper: #faf7f0;
+  --ink: #14213d;
+  --muted: #475569;
+  --faint: #94a3b8;
+  --line: #e2e8f0;
+  --red: #c8102e;
+  --teal: #0e7c7b;
+  --gold: #d9a441;
+  --card: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--teal); }
+a:hover { color: var(--red); }
+
+/* Masthead */
+.masthead { background: var(--ink); color: #fff; }
+.masthead-in { display: flex; align-items: baseline; gap: 14px; padding-top: 20px; padding-bottom: 6px; flex-wrap: wrap; }
+.brand { color: #fff; text-decoration: none; font-family: Georgia, "Times New Roman", serif; font-size: 32px; font-weight: 800; letter-spacing: 0.5px; }
+.brand:hover { color: #fff; }
+.brand-mark { color: var(--red); }
+.brand-sub { margin: 0; color: #cbd5e1; font-size: 14px; }
+nav { display: flex; gap: 4px; padding-bottom: 12px; overflow-x: auto; scrollbar-width: none; }
+nav::-webkit-scrollbar { display: none; }
+nav a {
+  color: #e2e8f0; text-decoration: none; font-size: 14px; font-weight: 600;
+  padding: 7px 11px; border-radius: 999px; white-space: nowrap;
+}
+nav a:hover { background: rgba(255,255,255,.12); color: #fff; }
+nav a.active { background: var(--red); color: #fff; }
+
+/* Pages */
+main { padding: 28px 20px 8px; }
+.hero { margin-bottom: 22px; }
+.eyebrow { color: var(--red); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; font-size: 12px; margin: 0 0 6px; }
+h1 { font-family: Georgia, "Times New Roman", serif; font-size: 40px; line-height: 1.1; margin: 0 0 10px; }
+.lede { font-size: 18px; color: var(--muted); max-width: 720px; margin: 0; }
+.page-head { margin-bottom: 20px; }
+.page-head h1 { font-size: 34px; }
+.src { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
+.src-inline { font-size: 12px; color: var(--muted); }
+
+/* KPI cards */
+.kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+.kpi {
+  display: block; background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px; text-decoration: none; color: var(--ink);
+  border-top: 4px solid var(--teal);
+}
+.kpi:hover { border-color: var(--teal); }
+.kpi-label { display: block; font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .4px; }
+.kpi-value { display: block; font-family: Georgia, serif; font-size: 30px; font-weight: 800; margin: 6px 0 2px; }
+.kpi-detail { display: block; font-size: 13px; color: var(--muted); }
+.kpi-src { display: block; font-size: 12px; color: var(--faint); margin-top: 8px; }
+
+/* Panels */
+.panel { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin-bottom: 22px; }
+.panel h2 { font-size: 21px; margin: 0 0 4px; font-family: Georgia, serif; }
+.panel-sub { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.panel-foot { margin: 10px 0 0; font-weight: 700; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+.split .panel { margin-bottom: 22px; }
+svg { width: 100%; height: auto; display: block; }
+
+/* Big stat */
+.bigstat { background: var(--ink); color: #fff; border-radius: 12px; padding: 22px 26px; margin-bottom: 22px; }
+.bigstat-value { display: block; font-family: Georgia, serif; font-size: 52px; font-weight: 800; line-height: 1; }
+.bigstat-label { display: block; margin-top: 8px; color: #cbd5e1; font-size: 15px; }
+
+/* Tables */
+.tbl { width: 100%; border-collapse: collapse; font-size: 14px; margin: 10px 0; }
+.tbl th, .tbl td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tbl th { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .4px; }
+.tbl .num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+.tbl th.num { text-align: right; }
+.src-cell { color: var(--muted); font-size: 12px; }
+
+/* Definition lists */
+.defs { margin: 10px 0; }
+.defs > div { display: flex; justify-content: space-between; gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--line); }
+.defs dt { color: var(--muted); }
+.defs dd { margin: 0; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Releases */
+.releases { margin: 8px 0 0; padding-left: 20px; }
+.releases li { margin-bottom: 8px; }
+
+/* Controls: year buttons, province buttons, search */
+.yr-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 14px; }
+.yr-label { font-weight: 700; font-size: 14px; }
+.yr-btn, .prov-btn {
+  font: inherit; cursor: pointer; border: 1px solid var(--line); background: #fff;
+  border-radius: 999px; padding: 6px 13px; font-size: 14px; font-weight: 600; color: var(--ink);
+}
+.yr-btn:hover, .prov-btn:hover { border-color: var(--teal); color: var(--teal); }
+.yr-btn.active, .prov-btn.active { background: var(--red); border-color: var(--red); color: #fff; }
+.yr-detail, .prov-detail { margin-top: 12px; background: #f1f5f9; border-radius: 8px; padding: 12px 14px; font-size: 15px; }
+.prov-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 6px; }
+.search-label { display: block; font-weight: 700; margin-bottom: 6px; }
+.search-box {
+  width: 100%; font: inherit; padding: 11px 14px; border: 1px solid var(--line);
+  border-radius: 10px; background: #fff;
+}
+.search-box:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+.empty-note { color: var(--muted); font-style: italic; }
+
+/* Footer */
+.foot { padding: 22px 20px 34px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); margin-top: 10px; }
+.foot p { margin: 6px 0; }
+
+/* Phone layout */
+@media (max-width: 760px) {
+  h1 { font-size: 30px; }
+  .page-head h1 { font-size: 27px; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .kpi-value { font-size: 24px; }
+  .split { grid-template-columns: 1fr; gap: 0; }
+  .bigstat-value { font-size: 40px; }
+  .panel { padding: 16px; }
+  .masthead-in { padding-top: 14px; }
+  .brand { font-size: 26px; }
+  .defs > div { flex-direction: column; gap: 2px; }
+  .defs dd { text-align: left; }
+}
